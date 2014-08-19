@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="ROBOTS" content="NOODP" />
+  <title><%= page_title %></title>
+  <%= stylesheet_link_tag :application, :media => 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body class="body_application">
+
+  <div class="header_paragraph">
+    <img src="/assets/<insert an image here>" alt="<Insert a name here>" />
+  </div>
+  
+  <div>
+    <div class="empty_between_header_and_login">  </div>
+    <div class="login_panel">
+      <%= render template: "user_sessions/destroy" %>
+    </div>
+  </div>
+  
+  <div class="empty_between_panels">  
+  </div>
+  
+  <div class="main_yield">
+    <%= render 'flashes' -%>
+    <%= yield %>
+    <%= render 'javascript' %>
+  </div>
+  
+  <div class="empty_between_main_and_footer">
+
+  </div>
+
+</body>
+</html>

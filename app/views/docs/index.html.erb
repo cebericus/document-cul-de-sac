@@ -1,0 +1,31 @@
+<h1>Documents</h1>
+
+<table class="tables">
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>Description</th>
+      <th>Content_type</th>
+      <th>Owner</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @docs.each do |doc| %>
+      <tr>
+        <td><%= doc.filename %></td>
+        <td><%= doc.description %></td>
+        <td><%= doc.content_type %></td>
+        <td><%= doc.owner %></td>
+        <td><%#= doc.binary_content %></td>
+        <td><%#= link_to 'Show', doc %></td>
+        <td><%= link_to 'Edit', edit_doc_path(doc) %></td>
+        <td><%= link_to 'Destroy', doc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doc', new_doc_path %>

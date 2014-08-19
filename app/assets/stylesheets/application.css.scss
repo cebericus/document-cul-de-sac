@@ -1,0 +1,167 @@
+@charset 'utf-8';
+
+///////////////////////////////////////////////////////////////////////////////
+
+@import 'bourbon';
+@import 'neat';
+
+///////////////////////////////////////////////////////////////////////////////
+$blue_light:        rgba(128,225,243,0.6);
+$blue_dark:         rgba(99,175,188,0.6);
+$blue_grey:         rgba(200,230,255,.5);
+$gray_shadow:       rgba(41,41,41,0.5);
+
+@mixin border_narrow {
+  border:           2px;
+  border-radius:    2px;
+}
+
+@mixin border_wide {
+  border:           40px;
+  border-radius:    2px;
+}
+
+@mixin shadow {
+  box-shadow:       2px 2px 5px $gray_shadow;
+}
+
+@mixin body_mixin {
+  background-size:  cover;
+  margin-left:      25px;
+  margin-right:     25px;
+  width:            768px;
+  //height:           8.5in;
+}
+
+@mixin margin_std {
+  margin:           10px;
+}
+
+@mixin button_margin {
+  @include margin_std;
+}
+
+@mixin button_margin_narrow {
+  margin:           5px;
+}
+
+ h1 {
+   text-align:      center;
+   }
+
+.tables {
+  text-align:       left;
+}
+
+.table_row {
+  padding-left:     50px;
+  padding-top:      50px;
+  //padding-right:    100px;
+}
+
+.description {
+  max-width:        100px;
+}
+
+.browse{
+  @include button_margin;
+  //width:            300px;
+  float:            center;
+  background-color: $blue_light;
+}
+
+.body_application {
+  background-image: url("gray_panel.png");
+  @include body_mixin;
+}
+
+.body_login {
+  background-image: url("dscn1957.png");
+  @include body_mixin;
+}
+
+.header {
+  background-color: $blue_light;
+  height:           100px;
+  @include          shadow;
+  @include          border_narrow;
+}
+
+.header_paragraph {
+  //background-color: $blue_light;
+  height:           100px;
+  @include margin_std;
+  float:            left;
+  //text-align:       auto;
+}
+
+.empty_between_header_and_login {
+  height:           15px;
+  width:            100px;
+  //background-color: $blue_dark
+}
+
+.button {
+  @include button_margin_narrow;
+  @include button(simple, $blue_grey);
+  font-size:         medium;
+}
+
+.login_panel {
+  background-color: $blue_grey;
+  float:            right;
+  text-align:       center;
+  @include          shadow;
+  @include          border_narrow;
+}
+
+.empty_between_panels {
+  clear:            both;
+  width:            20px;
+  height:           1px;
+}
+
+.main_yield {
+  //background-color: $blue_grey;
+  //width:            600px;
+  //height:           60%;
+  float:            left;
+  text-align:       center;
+  @include          shadow;
+  @include          border_wide;
+}
+
+.client_yield {
+  @extend           .main_yield;
+  clear:            both;
+  width:            100%;
+  overflow:         auto;
+}
+
+.client_index {
+  width:            50%;
+  text-align:       center;
+  float:            left;
+}
+
+.empty_between_main_and_footer {
+  height:           50px;
+  //background-color: $blue_dark;
+  clear:            both;
+}
+
+.footer {
+  //background-color: $blue_grey;
+  //height:           10px;
+  @include          shadow;
+  @include          border_narrow;
+  //float:            left;
+  clear: both;
+  margin:           0 auto;
+  width:            100%;
+}
+
+.icon {
+  @include margin_std;
+  
+}

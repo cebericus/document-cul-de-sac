@@ -1,0 +1,7 @@
+         run   heroku config:add SECRET_KEY_BASE=21086afdeb48d9bb37043ec1018fb53b9caa62f28659552645f1bd121aa9b9d1f60cbd0f6be598b5e2439e984cab2bfe88d4716c6cd6b76668d715421e896212 --remote=staging from "."
+         run   heroku config:add SECRET_KEY_BASE=4624bebe662718b078a6cfd30184fdf764774268b0cc7a6a94fbee368c0503c3e61ecb5555d8dd872044c8e43b3caa6866fc52171d9e63895567dfc826cad993 --remote=production from "."
+
+b7f44bb91abaeec0dc9dacf6448aa692f2ea93be10cd281c1597d96065c2bf1f0dfaf830e818c25a7552468480771ec86f8f8ac8b841cf84ff41f0b9c5d6f936
+
+firmware checksum for Feb09:
+c9e05ef08538f4ed017e611b8ec43a56

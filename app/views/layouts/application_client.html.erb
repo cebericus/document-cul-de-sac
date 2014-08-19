@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="ROBOTS" content="NOODP" />
+  <title><%= page_title %></title>
+  <%= stylesheet_link_tag :application, :media => 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body class="body_application">
+
+  <div class="header_paragraph">
+    <img src="/assets/<insert an image here>" alt="<Insert a name here>" />
+  </div>
+  
+  <div>
+    <div class="empty_between_header_and_login">  </div>
+    <div class="login_panel">
+      <%= render template: "user_sessions/destroy" %>
+    </div>
+  </div>
+  
+  <div class="empty_between_panels">  
+  </div>
+  
+  <div class="client_yield">
+    <div class="client_index">
+    <%= render template: "downloads/index" %>
+    <%= render 'javascript' %>
+    </div>
+
+      <%= image_tag('<insert an image here>', size:"300x400")%>
+
+  </div>
+  
+  <div class="empty_between_main_and_footer">
+  </div>
+
+  <div class="footer">
+    <%=link_to image_tag('ruby.png',      size:"64x64", alt:"Ruby",      class:"icon"), "https://www.ruby-lang.org/en/" %>
+    <%=link_to image_tag('rails.png',     size:"64x64", alt:'Rails',     class:"icon"), "http://rubyonrails.org/" %>
+    <%=link_to image_tag('postgresql.gif',size:"110x64",alt:'PostGreSql',class:"icon"), "http://www.postgresql.org/" %>
+    <%=link_to image_tag('linkedin.png',  size:"64x64", alt:'LinkedIn',  class:"icon"), "http://www.linkedin.com/pub/<insert a linkedin url>" %>
+    <%=link_to image_tag('github.jpeg',   size:"64x64", alt:'GitHub',    class:"icon"), "https://www.github.com/cebericus" %>
+    <div class="login_panel"><%= render 'flashes' -%></div>
+  </div>
+
+</body>
+</html>

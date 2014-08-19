@@ -1,0 +1,49 @@
+<h1>Users</h1>
+<table class="tables">
+  <thead>
+    <tr>
+      <th>Login</th>
+      <th>Count</th>
+      <th>Failed</th>
+      <th>Last request</th>
+      <th>Current</th>
+      <th>Last</th>
+      <th>Ip Addr</th>
+      <th>Last Ip Addr</th>
+      <th>Created</th>
+      <th>Updated</th>
+      <th>Rights</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.login %></td>
+        <td><%= user.login_count %></td>
+        <td><%= user.failed_login_count %></td>
+        <td><%= user.last_request_at %></td>
+        <td><%= user.current_login_at %></td>
+        <td><%= user.last_login_at %></td>
+        <td><%= user.current_login_ip %></td>
+        <td><%= user.last_login_ip %></td>
+        <td><%= user.created_at %></td>
+        <td><%= user.updated_at %></td>
+        <% @roles.each do |role| %>
+          <% if user.has_role? role.name %>
+            <td><%= role.name %></td>
+          <% else %>
+            <td></td>
+          <% end %>
+        <% end %>
+        <td><%#= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>

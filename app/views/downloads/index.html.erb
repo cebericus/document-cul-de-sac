@@ -1,0 +1,19 @@
+<h1>Resume</h1>
+
+<table class="tables">
+  <tr class="table_row">
+    <% @docs.each do |doc| %>
+      <%#= doc.inspect %>
+      <td>
+        <%= link_to image_tag( icon(doc)[:icon],                               
+                               alt: icon(doc)[:alt],
+                               size: icon(doc)[:size], 
+                               class:"icon" 
+                             ),
+                    downloads_download_url( id: doc ) %>
+        <%= doc.description %>
+      </td>
+    <% end %>
+  </tr> 
+</table>
+

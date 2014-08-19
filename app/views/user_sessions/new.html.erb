@@ -1,0 +1,18 @@
+<%= form_for @user_session do |form| %>  
+  <table class="tables_panel">
+    <tr>  
+      <td><%= form.label :login, "Username" %></td>  
+      <td><%= form.text_field :login %></td>
+      </tr>
+      <tr>  
+      <td><%= form.label :password, "Password" %></td>  
+      <td><%= form.password_field :password %></td>
+      </tr>
+      <tr> 
+      <td><%= button_tag(type: 'submit', class: 'button') do
+              content_tag(:strong, 'Login')
+            end%>
+      </td>  
+    </tr>  
+  </table>
+<% end %> 

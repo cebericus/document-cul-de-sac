@@ -1,0 +1,11 @@
+<%= form_tag( "/logout", method: "get", html: {class: "login_panel"} ) do %>  
+  <table class="tables">
+    <tr>
+      <td><%= current_user.login.camelize + " @ " + current_user.current_login_ip + "   "  %></td>
+      <td><%= button_tag(type: 'submit', class: 'button') do
+              content_tag(:strong, 'Logout')
+            end%>
+      </td>  
+    </tr>  
+  </table>
+<% end %> 

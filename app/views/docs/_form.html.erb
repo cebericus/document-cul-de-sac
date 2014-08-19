@@ -1,0 +1,12 @@
+<%= form_for(@doc) do |form| %>
+  <table class="tables">  
+    <tr>
+      <td align="right"><%= form.label :description, "Document description" %></td>
+      <td align="left"><%= form.text_field :description %></td>  
+    </tr>
+    </table>
+      <%= form.file_field "document_file", class: "browse button" %> <%# NOTE: see model/doc.rb %>
+  <%= form.submit "Upload", class: "button" %>
+  
+  <%= render "shared/error_messages", :target => @doc %>
+<% end %>
